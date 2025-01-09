@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #ff5722;
+    --secondary-color: #212121;
+    --text-color: #ffffff;
+    --bg-color: #121212;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header img {
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: var(--primary-color);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+.skills, .projects, .contact {
+    margin-bottom: 2rem;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skills li {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.skills li:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+.project h3 {
+    margin: 0 0 0.5rem;
+}
+
+.contact form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact input, .contact textarea, .contact button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.contact button {
+    background: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: var(--secondary-color);
+}
+
+footer {
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+footer img {
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: rotate(360deg);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
